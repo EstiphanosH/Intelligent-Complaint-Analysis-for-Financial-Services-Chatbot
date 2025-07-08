@@ -1,27 +1,29 @@
+# Data files
+data/processed/
+data/raw/
+vectorstore/
+
 # Python artifacts
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 
-# Virtual environments
+# Environment files
 .env
 .venv
 venv/
 env/
 
-# Data files
-data/
+# Logs
+*.log
 
 # Notebook checkpoints
-*.ipynb_checkpoints/
+.ipynb_checkpoints/
 
 # OS files
 .DS_Store
 
-# Logs
-*.log
-
 # IDE files
-.idea/
 .vscode/
+.idea/
