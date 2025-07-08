@@ -1,32 +1,44 @@
-# Core Requirements
-numpy==1.26.4
+# Core Dependencies (Stable & Compatible)
 pandas==2.2.1
-spacy==3.7.4
-langchain==0.1.16
-sentence-transformers==2.7.0
-chromadb==0.4.24
-faiss-cpu==1.8.0
-transformers[torch]==4.40.1
-gradio==4.24.0
-matplotlib==3.8.3
-seaborn==0.13.2
-tqdm==4.66.2
-loguru==0.7.2
-python-dotenv==1.0.1
-accelerate==0.29.3
-bitsandbytes==0.43.1
+numpy==1.26.4
+python-dotenv==1.0.0
+tqdm==4.66.1
 
-# Additional Requirements (implicit dependencies)
-huggingface-hub==0.22.2
-sentencepiece==0.2.0
-protobuf==4.25.3
-pydantic==2.6.0
-fastapi==0.110.0
-uvicorn==0.29.0
+# Text Processing
+nltk==3.8.1
+spacy==3.7.2  # Compatible with all
+    # Run after install: python -m spacy download en_core_web_sm
+regex==2023.12.25  # Required for tokenization
+
+# Embeddings & ML
+torch==2.2.0 # CPU-only version (stable)
+    # For GPU: torch==2.1.2+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
+transformers==4.37.2
+sentence-transformers==2.2.2
+accelerate==0.27.2  # Compatible with transformers 4.37
+
+# Vector Database (Stable Combination)
+chromadb==0.4.15
+pypika==0.48.9  # ChromaDB compatible version
+posthog==2.4.2  # Required by ChromaDB
+pydantic==1.10.14  # Must use v1 for ChromaDB compatibility
+typing_extensions==4.9.0  # For Pydantic
+
+# Interface
+gradio==3.50.2  # Last version without heavy dependencies
+
+# Visualization
+matplotlib==3.8.0
+seaborn==0.13.0
+wordcloud
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
+
+# Token Handling (Lightweight)
+tiktoken==0.5.2
+
+# Utils
 requests==2.31.0
-
-# Development Tools 
-pytest==8.0.0
-flake8==7.0.0
-jupyter==1.0.0
-ipython==8.22.2
+tqdm==4.66.1
